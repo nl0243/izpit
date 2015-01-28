@@ -1,0 +1,20 @@
+[
+	{"uporabnik": "uporabnik1", "geslo": "123456"},
+	{"uporabnik": "uporabnik3", "geslo": "12345678"},
+	{"uporabnik": "uporabnik5", "geslo": "abc123"},
+	{"uporabnik": "uporabnik7", "geslo": "111111"},
+	{"uporabnik": "uporabnik9", "geslo": "iloveyou"},
+	{"uporabnik": "uporabnik11", "geslo": "123123"},
+	{"uporabnik": "uporabnik13", "geslo": "1234567890"},
+	{"uporabnik": "uporabnik15", "geslo": "photoshop"},
+	{"uporabnik": "uporabnik17", "geslo": "monkey"},
+	{"uporabnik": "uporabnik19", "geslo": "sunshine"},
+	{"uporabnik": "uporabnik21", "geslo": "password1"},
+	{"uporabnik": "uporabnik23", "geslo": "azerty"},
+	{"uporabnik": "uporabnik25", "geslo": "000000"},
+
+	{"uporabnik": "Pluton", "geslo": "leashfollowing"},
+	{"uporabnik": "Popaj", "geslo": "bloatgulp"},
+	{"uporabnik": "Pujsa Pepa", "geslo": "committeeweyr"},
+	{"uporabnik": "Smrketa", "geslo": "staffbarren"}
+]
