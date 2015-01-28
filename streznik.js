@@ -3,6 +3,8 @@ var express = require('express'), path = require('path'), fs = require('fs');
 var app = express();
 app.use(express.static(__dirname + '/public'));
 
+var podatkiSpomin = ["admin/nimda", "gost/gost"];
+
 
 /**
  * TODO: Potrebna je implementacija tega dela funkcionalnosti (PU Zunanja avtentikacija)
