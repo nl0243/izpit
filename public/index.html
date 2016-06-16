@@ -14,23 +14,27 @@
 			var uporabniskoIme = "", geslo = "";
 			
 			
-			/**
-			 * TODO: Potrebna je implementacija tega dela funkcionalnosti
-			 */
+
 			function preveriSpomin(uporabniskoIme, geslo) {
-				// ...
+				for(i in podatkiSpomin){
+					username = podatkiSpomin[i].split("/")[0];
+					password = podatkiSpomin[i].split("/")[1];
+					if(username == uporabniskoIme && password == geslo){
+						return true;
+					}
+				}
 				return false;
-				// ...
 			}
 			
-			
-			/**
-			 * TODO: Potrebna je implementacija tega dela funkcionalnosti
-			 */
 			function preveriDatotekaOdjemalec(uporabniskoIme, geslo) {
-				// ...
+				for(i in podatkiDatotekaOdjemalec){
+					username = podatkiDatotekaOdjemalec[i]["u"];
+					password = podatkiDatotekaOdjemalec[i]["p"];
+					if(username == uporabniskoIme && password == geslo){
+						return true;
+					}
+				}
 				return false;
-				// ...
 			}
 
 
@@ -40,19 +44,36 @@
 			 * Zahteva se posreduje na /prijava, kot je zapisano v atributu action="/prijava" v okviru elementa form.
 			 */
 			function preveriPodatke() {
-				// ...
-				return false;
-				// ...
+				var napaka = "";
+				uporabniskoIme = $("#uporabniskoIme").val();
+				geslo = $("#geslo").val();
+				
+				if((uporabniskoIme == null || uporabniskoIme.length == 0) && (geslo == null || geslo.length == 0)){
+					napaka = "Prosim vnesite uporabniško ime in geslo.";
+				}
+				else if((uporabniskoIme.length != 0) && (geslo == null || geslo.length == 0)){
+					napaka = "Prosim vnesite geslo.";
+				}
+				else if((uporabniskoIme == null || uporabniskoIme.length == 0) && (geslo.length != 0)){
+					napaka = "Prosim vnesite uporabniško ime.";
+				}
+				else if(!(preveriSpomin(uporabniskoIme, geslo) || preveriDatotekaOdjemalec(uporabniskoIme, geslo))){
+					napaka = "Uporabniško ime in/ali geslo je napačno";
+				}
+				
+				if(napaka == ""){
+					return true;
+					
+				}else{
+					$("#status").html(napaka);
+					return false;
+					
+				}
+				
 			}
-			
-			
 			$(document).ready(function() {
-				/**
-				 * TODO: Potrebna je implementacija tega dela funkcionalnosti (branje datotek na odjemalcu)
-				 */
-				 // ...
-				 podatkiDatotekaOdjemalec = {};
-				 // ...
+				$.getJSON("podatki/uporabniki_odjemalec.json", function(odgovor){ 
+					podatkiDatotekaOdjemalec = odgovor;});
 			});
 		</script>
 	</head>
